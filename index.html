@@ -1,0 +1,10 @@
+<h1>JOKER BUS</h1>
+<h3>Онлайн бронювання</h3>
+
+{% for key, route in routes.items() %}
+<div>
+    <p>{{ route.from }} → {{ route.to }}</p>
+    <a href="/trips/{{ key }}">Обрати дату та час рейсу</a>
+</div>
+<hr>
+{% endfor %}
