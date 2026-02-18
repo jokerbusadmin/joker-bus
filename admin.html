@@ -1,0 +1,9 @@
+<h2>Адмінка JOKER BUS</h2>
+<table border="1">
+<tr><th>ID</th><th>Автобус ID</th><th>Місце</th><th>Ім’я</th><th>Телефон</th><th>Trip ID</th></tr>
+{% for row in data %}
+<tr>
+<td>{{ row[0] }}</td><td>{{ row[1] }}</td><td>{{ row[2] }}</td><td>{{ row[3] }}</td><td>{{ row[4] }}</td><td>{{ row[5] }}</td>
+</tr>
+{% endfor %}
+</table>
