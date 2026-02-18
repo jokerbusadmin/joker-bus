@@ -3,11 +3,9 @@ import sqlite3
 import uuid
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.')
 
 DB_PATH = "database.db"
-
-ROUTES = {
     "1": {"from": "Черкаси", "to": "Одеса"},
     "2": {"from": "Одеса", "to": "Черкаси"}
 }
