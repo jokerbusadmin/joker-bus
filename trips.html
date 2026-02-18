@@ -1,0 +1,18 @@
+<h2>Рейси {{ route.from }} → {{ route.to }}</h2>
+
+<h3>Додати рейс</h3>
+<form method="POST">
+Дата:<input type="date" name="date" required><br>
+Час відправлення:<input type="time" name="departure_time" required><br>
+Час прибуття:<input type="time" name="arrival_time" required><br>
+<button type="submit">Додати рейс</button>
+</form>
+
+<hr>
+<h3>Доступні рейси:</h3>
+{% for trip in trips %}
+<div>
+Дата: {{ trip[2] }}, Відправлення: {{ trip[3] }}, Прибуття: {{ trip[4] }}
+<a href="/seats/{{ trip[0] }}">Обрати місце</a>
+</div>
+{% endfor %}
