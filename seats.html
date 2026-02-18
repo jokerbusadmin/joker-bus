@@ -1,0 +1,18 @@
+<h2>Вибір автобуса і місця</h2>
+{% for bus in buses %}
+<h3>Автобус №{{ bus.id }} ({{ bus.seats_count }} місць)</h3>
+<form method="POST" action="/book">
+<input type="hidden" name="bus_id" value="{{ bus.id }}">
+Ім'я:<input name="name" required><br>
+Телефон:<input name="phone" required><br>
+Місце:<select name="seat">
+{% for i in range(1, bus.seats_count+1) %}
+    {% if i not in bus.booked %}
+        <option value="{{ i }}">Місце {{ i }}</option>
+    {% endif %}
+{% endfor %}
+</select><br>
+<button type="submit">Забронювати</button>
+</form>
+<hr>
+{% endfor %}
